@@ -1,0 +1,80 @@
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="CreateProject" targetNamespace="http://httpconnector.coe.cordys.com/2.0/REST/JIRA" xmlns:tns="http://httpconnector.coe.cordys.com/2.0/REST/JIRA">
+  <wsdl:types>
+    <schema xmlns="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://httpconnector.coe.cordys.com/2.0/REST/JIRA">
+      <element name="CreateProject">
+        <complexType>
+          <sequence>
+            <element type="xs:string" name="name" xmlns:xs="http://www.w3.org/2001/XMLSchema" minOccurs="1" maxOccurs="1" />
+            <element type="xs:string" name="key" xmlns:xs="http://www.w3.org/2001/XMLSchema" minOccurs="1" maxOccurs="1" />
+            <element type="xs:string" name="url" xmlns:xs="http://www.w3.org/2001/XMLSchema" minOccurs="0" maxOccurs="1" />
+            <element type="xs:string" name="projectlead" xmlns:xs="http://www.w3.org/2001/XMLSchema" minOccurs="1" maxOccurs="1" />
+            <element type="xs:string" name="description" xmlns:xs="http://www.w3.org/2001/XMLSchema" minOccurs="0" maxOccurs="1" />
+            <element type="xs:string" name="notificationscheme" xmlns:xs="http://www.w3.org/2001/XMLSchema" minOccurs="0" maxOccurs="1" />
+            <element type="xs:string" name="permissionscheme" xmlns:xs="http://www.w3.org/2001/XMLSchema" minOccurs="1" maxOccurs="1" />
+            <element type="xs:string" name="securityscheme" xmlns:xs="http://www.w3.org/2001/XMLSchema" minOccurs="0" maxOccurs="1" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="CreateProjectResponse">
+
+      	<complexType>
+      		<sequence>
+      			<element name="tuple" maxOccurs="1" minOccurs="1">
+      				<complexType>
+      					<sequence>
+      						<element name="old"
+      							maxOccurs="1" minOccurs="1">
+                                        <complexType>
+                                        	<sequence>
+                                        		<element
+                                        			name="project"
+                                        			maxOccurs="1" minOccurs="1">
+                                                    <complexType>
+                                                    	<sequence>
+                                                    		<element
+                                                    			name="projectid"
+                                                    			type="long">
+                                                    		</element>
+                                                    	</sequence>
+                                                    </complexType>
+                                        		</element>
+                                        	</sequence>
+                                        </complexType>
+      						</element>
+      					</sequence>
+      				</complexType></element>
+      		</sequence>
+      	</complexType>
+      </element>
+    </schema>
+  </wsdl:types>
+  <wsdl:message name="CreateProject">
+    <wsdl:part element="tns:CreateProject" name="body" />
+  </wsdl:message>
+  <wsdl:message name="CreateProjectResponse">
+    <wsdl:part element="tns:CreateProjectResponse" name="body" />
+  </wsdl:message>
+  <wsdl:portType name="CreateProjectPortType">
+    <wsdl:operation name="CreateProjectOperation">
+      <wsdl:input message="tns:CreateProject" />
+      <wsdl:output message="tns:CreateProjectResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CreateProjectBinding" type="tns:CreateProjectPortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateProjectOperation">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CreateProjectService">
+    <wsdl:port binding="tns:CreateProjectBinding" name="CreateProjectPort">
+      <soap:address location="http://cnl1259/cordys/com.eibus.web.soap.Gateway.wcp?organization=o=Telindus,cn=cordys,o=gussow.com" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,72 @@
+<MessageBundle id="com.cordys.coe.ac.httpconnector.Messages" javaclass="com.cordys.coe.ac.httpconnector.Messages">
+	<Message id="connectorManagementDescription">
+	    <MessageText>HttpConnector connector</MessageText>
+	    <Description/>
+	    <Annotations>                          
+	        <DocumenationURL/>                         
+	    </Annotations> 
+    </Message>
+	<Message id="coelibVersionMismatch">
+	    <MessageText>Coelib version mismatch.</MessageText>
+	    <Description/>
+	    <Annotations>                          
+			<DocumenationURL/>                         
+	    </Annotations> 
+    </Message>
+        <Message id="connectorStarting">
+		<MessageText>Starting HttpConnector connector</MessageText>
+		<Description/>
+		<Annotations>                          
+		            <DocumenationURL/>                         
+		</Annotations> 
+    </Message>
+    <Message id="connectorStarted">
+		<MessageText>HttpConnector connector started.</MessageText>
+		<Description/>
+		<Annotations>                          
+		    <DocumenationURL/>                         
+		</Annotations> 
+    </Message>
+    <Message id="connectorStartException">
+		<MessageText>An error occurred while starting the HttpConnector connector.</MessageText>
+		<Description/>
+		<Annotations>                          
+			<DocumenationURL/>                         
+		</Annotations> 
+    </Message>
+      <Message id="connectorStopped">
+		<MessageText>HttpConnector connector stopped.</MessageText>
+		<Description/>
+		<Annotations>                          
+			<DocumenationURL/>                         
+		</Annotations> 
+    </Message>
+    <Message id="connectorReset">
+		<MessageText>Resetting HttpConnector connector</MessageText>
+		<Description/>
+		<Annotations>                          
+			<DocumenationURL/>                         
+		</Annotations> 
+    </Message>
+    <Message id="transactionAbort">
+		<MessageText>Aborted the transaction.</MessageText>
+		<Description/>
+		<Annotations>                          
+			<DocumenationURL/>                         
+		</Annotations> 
+    </Message>
+    <Message id="transactionCommit">
+		<MessageText>Committed the transaction.</MessageText>
+		<Description/>
+		<Annotations>                          
+			<DocumenationURL/>                         
+		</Annotations> 
+    </Message>		
+    <Message id="transactionError">
+		<MessageText>An error occurred while processing the SOAP request: {0}</MessageText>
+		<Description/>
+		<Annotations>                          
+			<DocumenationURL/>                         
+		</Annotations> 
+    </Message>	
+</MessageBundle>
