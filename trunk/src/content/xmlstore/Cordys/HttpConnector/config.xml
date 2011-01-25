@@ -1,0 +1,7 @@
+<configuration xmlns="http://httpconnector.coe.cordys.com/2.0/configuration">
+	<connections>
+		<connection id="TimeZoneService">  
+			<url>http://www.earthtools.org/timezone</url>
+		</connection>  
+	</connections>
+</configuration>
