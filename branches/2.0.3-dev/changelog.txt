@@ -1,0 +1,33 @@
+version 2.0.3 (released 2011-01-25)
+-change: Migrating the connector to opensource model.
+
+version 2.0.2 (released 2010-02-17)
+-add: 
+				
+					Added 'root-xpath' parameter to StandardRequestHandler and StandardResponseHandler
+					Added 'remove-namespaces' parameter to StandardRequestHandler and StandardResponseHandler.
+                      This is used to remove namespace declarations from request and response XML. If
+                      value * is given, then all namespace declarations are removed:
+						
+                      	<remove-namespaces:>
+                      	   <namespace-uri>*</namespace-uri>
+                      	</remove-namespaces:>
+						
+
+                      or
+
+						
+                      	<remove-namespaces:>
+                      	   <namespace-uri>uri:namespace1</namespace-uri>
+                      	   <namespace-uri>uri:namespace2</namespace-uri>
+                      	</remove-namespaces:>
+						
+					
+				
+			
+
+version 2.0.1 (released 2009-08-25)
+-add: Added XSDs for the implementation and configuration XML.
+-change: Refactored some classes to use interfaces instead of implementation classes
+-add: Externalized all exception messages
+

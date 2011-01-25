@@ -1,0 +1,291 @@
+<?xml version="1.0"?>
+<MessageBundle id="com.cordys.coe.ac.httpconnector.exception.ConnectorExceptionMessages">
+    <Message id="ERROR_PARSING_THE_HTML_RESPONSE">
+        <MessageText><![CDATA[Error parsing the HTML response]]></MessageText>
+        <Description>
+        </Description>
+        <Annotations>
+            <DocumenationURL/>
+        </Annotations>
+    </Message>
+    <Message id="THE_NAME_OF_THE_PARAMETER_MUST_BE_FILLED">
+        <MessageText><![CDATA[The 'name' of the parameter must be filled.]]></MessageText>
+        <Description>
+        </Description>
+        <Annotations>
+            <DocumenationURL/>
+        </Annotations>
+    </Message>
+    <Message id="THE_PARAMETER_0_HAS_NO_CHILD_ELEMENT">
+        <MessageText><![CDATA[The parameter {0} has no child element.]]></MessageText>
+        <Description>
+        </Description>
+        <Annotations>
+            <DocumenationURL/>
+        </Annotations>
+    </Message>
+    <Message id="THE_RESPONSE_XML_DID_NOT_MATCH_THE_VALID_RESPONSE_XPATH_THAT_WAS_CONFIGURED_IN_THE_METHOD_IMPLEMENTATION">
+        <MessageText><![CDATA[The response XML did not match the 'Valid response XPath' that was configured in the method implementation.]]></MessageText>
+        <Description>
+        </Description>
+        <Annotations>
+            <DocumenationURL/>
+        </Annotations>
+    </Message>
+    <Message id="THE_VALUE_FOR_PARAMETER_0_IS_EMPTY">
+        <MessageText><![CDATA[The value for parameter {0} is empty]]></MessageText>
+        <Description>
+        </Description>
+        <Annotations>
+            <DocumenationURL/>
+        </Annotations>
+    </Message>
+    <Message id="BOTH_FILE_AND_XMLSTORE_ATTRIBUTES_CANNOT_BE_SET_FOR_XSLT">
+        <MessageText><![CDATA[Both file and xmlstore attributes cannot be set for XSLT.]]></MessageText>
+        <Description>
+        </Description>
+        <Annotations>
+            <DocumenationURL/>
+        </Annotations>
+    </Message>
+    <Message id="CONFIGURATION_FILE_NOT_FOUND_FROM_XMLSTORE_0">
+        <MessageText><![CDATA[Configuration file not found from XMLStore: {0}]]></MessageText>
+        <Description>
+        </Description>
+        <Annotations>
+            <DocumenationURL/>
+        </Annotations>
+    </Message>
+    <Message id="CONFIGURATION_FILE_NOT_SET_FOR_THIS_CONNECTOR">
+        <MessageText><![CDATA[Configuration file not set for this connector.]]></MessageText>
+        <Description>
+        </Description>
+        <Annotations>
+            <DocumenationURL/>
+        </Annotations>
+    </Message>
+    <Message id="ERROR_EXECUTING_REQUEST_0">
+        <MessageText><![CDATA[Error executing request: {0}]]></MessageText>
+        <Description>
+        </Description>
+        <Annotations>
+            <DocumenationURL/>
+        </Annotations>
+    </Message>
+    <Message id="EXPECTED_INLINE_XSLT_CONFIGURATION">
+        <MessageText><![CDATA[Expected inline XSLT configuration.]]></MessageText>
+        <Description>
+        </Description>
+        <Annotations>
+            <DocumenationURL/>
+        </Annotations>
+    </Message>
+    <Message id="HTTP_CONNECTION_FAILED_0">
+        <MessageText><![CDATA[HTTP connection failed: {0}]]></MessageText>
+        <Description>
+        </Description>
+        <Annotations>
+            <DocumenationURL/>
+        </Annotations>
+    </Message>
+    <Message id="HTTP_REQUEST_FAILED_0">
+        <MessageText><![CDATA[HTTP request failed: {0}]]></MessageText>
+        <Description>
+        </Description>
+        <Annotations>
+            <DocumenationURL/>
+        </Annotations>
+    </Message>
+    <Message id="INVALID_RESPONSE_CODE_VALUE_0">
+        <MessageText><![CDATA[Invalid response code value: {0}]]></MessageText>
+        <Description>
+        </Description>
+        <Annotations>
+            <DocumenationURL/>
+        </Annotations>
+    </Message>
+    <Message id="INVALID_RESPONSE_RECEIVED_FROM_XMLSTORE">
+        <MessageText><![CDATA[Invalid response received from XMLStore.]]></MessageText>
+        <Description>
+        </Description>
+        <Annotations>
+            <DocumenationURL/>
+        </Annotations>
+    </Message>
+    <Message id="INVALID_RESPONSE_XML_RECEIVED">
+        <MessageText><![CDATA[Invalid response XML received.]]></MessageText>
+        <Description>
+        </Description>
+        <Annotations>
+            <DocumenationURL/>
+        </Annotations>
+    </Message>
+    <Message id="INVALID_STATUS_CODE_RECEIVED_0_EXPECTED_1">
+        <MessageText><![CDATA[Invalid status code received: {0} (expected: {1}).]]></MessageText>
+        <Description>
+        </Description>
+        <Annotations>
+            <DocumenationURL/>
+        </Annotations>
+    </Message>
+    <Message id="MISSING_ATTRIBUTE_PREFIX_FROM_NAMESPACE_BINDING_ELEMENT">
+        <MessageText><![CDATA[Missing attribute 'prefix' from namespace binding element.]]></MessageText>
+        <Description>
+        </Description>
+        <Annotations>
+            <DocumenationURL/>
+        </Annotations>
+    </Message>
+    <Message id="MISSING_ATTRIBUTE_URI_FROM_NAMESPACE_BINDING_ELEMENT">
+        <MessageText><![CDATA[Missing attribute 'uri' from namespace binding element.]]></MessageText>
+        <Description>
+        </Description>
+        <Annotations>
+            <DocumenationURL/>
+        </Annotations>
+    </Message>
+    <Message id="NO_CONNECTION_FOUND_WITH_ID_0">
+        <MessageText><![CDATA[No connection found with ID: {0}]]></MessageText>
+        <Description>
+        </Description>
+        <Annotations>
+            <DocumenationURL/>
+        </Annotations>
+    </Message>
+    <Message id="UNABLE_TO_LOAD_CONFIGURATION_FROM_XMLSTORE">
+        <MessageText><![CDATA[Unable to load configuration from XMLStore.]]></MessageText>
+        <Description>
+        </Description>
+        <Annotations>
+            <DocumenationURL/>
+        </Annotations>
+    </Message>
+    <Message id="UNABLE_TO_LOAD_RESPONSE_HANDLER_0">
+        <MessageText><![CDATA[Unable to load response handler: {0}]]></MessageText>
+        <Description>
+        </Description>
+        <Annotations>
+            <DocumenationURL/>
+        </Annotations>
+    </Message>
+    <Message id="CLASS_ATTRIBUTE_MISSING_FROM_THE_RESPONSE_HANDLER_ELEMENT">
+        <MessageText><![CDATA[Class attribute missing from the response handler element.]]></MessageText>
+        <Description>
+        </Description>
+        <Annotations>
+            <DocumenationURL/>
+        </Annotations>
+    </Message>
+    <Message id="RESPONSE_HANDLER_ELEMENT_IS_NOT_SET">
+        <MessageText><![CDATA[Response handler element is not set.]]></MessageText>
+        <Description>
+        </Description>
+        <Annotations>
+            <DocumenationURL/>
+        </Annotations>
+    </Message>
+    <Message id="UNABLE_TO_LOAD_REQUEST_HANDLER_0">
+        <MessageText><![CDATA[Unable to load request handler: {0}]]></MessageText>
+        <Description>
+        </Description>
+        <Annotations>
+            <DocumenationURL/>
+        </Annotations>
+    </Message>
+    <Message id="CLASS_ATTRIBUTE_MISSING_FROM_THE_REQUEST_HANDLER_ELEMENT">
+        <MessageText><![CDATA[Class attribute missing from the request handler element.]]></MessageText>
+        <Description>
+        </Description>
+        <Annotations>
+            <DocumenationURL/>
+        </Annotations>
+    </Message>
+    <Message id="CONNECTION_ID_IS_NOT_SET">
+        <MessageText><![CDATA[Connection ID is not set.]]></MessageText>
+        <Description>
+        </Description>
+        <Annotations>
+            <DocumenationURL/>
+        </Annotations>
+    </Message>
+    <Message id="REQUEST_HANDLER_ELEMENT_IS_NOT_SET">
+        <MessageText><![CDATA[Request handler element is not set.]]></MessageText>
+        <Description>
+        </Description>
+        <Annotations>
+            <DocumenationURL/>
+        </Annotations>
+    </Message>
+    <Message id="THE_TAG_CONFIGPATH_MUST_BE_FILLED">
+        <MessageText><![CDATA[The tag config-path must be filled.]]></MessageText>
+        <Description>
+        </Description>
+        <Annotations>
+            <DocumenationURL/>
+        </Annotations>
+    </Message>
+    <Message id="CONFIGURATION_ELEMENT_NOT_FOUND">
+        <MessageText><![CDATA['Configuration' element not found.]]></MessageText>
+        <Description>
+        </Description>
+        <Annotations>
+            <DocumenationURL/>
+        </Annotations>
+    </Message>
+    <Message id="ROOTTAG_OF_THE_CONFIGURATION_SHOULD_BE_CONFIGURATION">
+        <MessageText><![CDATA[Root-tag of the configuration should be 'configuration']]></MessageText>
+        <Description>
+        </Description>
+        <Annotations>
+            <DocumenationURL/>
+        </Annotations>
+    </Message>
+    <Message id="CONFIGURATION_NOT_FOUND">
+        <MessageText><![CDATA[Configuration not found]]></MessageText>
+        <Description>
+        </Description>
+        <Annotations>
+            <DocumenationURL/>
+        </Annotations>
+    </Message>
+    <Message id="INVALID_PROXY_SERVER_PORT_VALUE_0">
+        <MessageText><![CDATA[Invalid proxy server port value: {0}]]></MessageText>
+        <Description>
+        </Description>
+        <Annotations>
+            <DocumenationURL/>
+        </Annotations>
+    </Message>
+    <Message id="PROXY_SERVER_PORT_MUST_BE_SET">
+        <MessageText><![CDATA[Proxy server port must be set.]]></MessageText>
+        <Description>
+        </Description>
+        <Annotations>
+            <DocumenationURL/>
+        </Annotations>
+    </Message>
+    <Message id="INVALID_SERVER_URL_0">
+        <MessageText><![CDATA[Invalid server URL: {0}]]></MessageText>
+        <Description>
+        </Description>
+        <Annotations>
+            <DocumenationURL/>
+        </Annotations>
+    </Message>
+    <Message id="CONNECTION_ELEMENT_URL_IS_MISSING">
+        <MessageText><![CDATA[Connection element 'url' is missing.]]></MessageText>
+        <Description>
+        </Description>
+        <Annotations>
+            <DocumenationURL/>
+        </Annotations>
+    </Message>
+    <Message id="CONNECTION_ATTRIBUTE_ID_IS_MISSING">
+        <MessageText><![CDATA[Connection attribute 'id' is missing.]]></MessageText>
+        <Description>
+        </Description>
+        <Annotations>
+            <DocumenationURL/>
+        </Annotations>
+    </Message>
+</MessageBundle>

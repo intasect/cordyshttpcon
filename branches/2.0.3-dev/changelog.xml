@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+	<properties>
+		<title>HTTP Connector Changelog</title>
+		<author email="srkrishnan@cordys.com">Anantha Krishnan S R</author>
+	</properties>
+	<template>
+		<release date="YYYY-MM-DD" description="OPTIONAL DESCRIPTION" version="x.y.z">
+			<action dev="USER" type="add|fix|update|change">
+				Description about the action.
+			</action>
+		</release>
+	</template>
+	<body>
+		<release description="Development release" version="@NEXT@">
+				</release>
+<release date="2011-01-25" description="Development release" version="2.0.3">
+			<action dev="mvdveen" type="change">Migrating the connector to opensource model.</action>
+		</release>
+		<release date="2010-02-17" description="Development release" version="2.0.2">
+			<action dev="mpoyhone" type="add">
+				<ul>
+					<li>Added 'root-xpath' parameter to StandardRequestHandler and StandardResponseHandler</li>
+					<li>Added 'remove-namespaces' parameter to StandardRequestHandler and StandardResponseHandler.
+                      This is used to remove namespace declarations from request and response XML. If
+                      value * is given, then all namespace declarations are removed:
+						<pre>
+                      	&lt;remove-namespaces:&gt;
+                      	   &lt;namespace-uri&gt;*&lt;/namespace-uri&gt;
+                      	&lt;/remove-namespaces:&gt;
+						</pre>
+
+                      or
+
+						<pre>
+                      	&lt;remove-namespaces:&gt;
+                      	   &lt;namespace-uri&gt;uri:namespace1&lt;/namespace-uri&gt;
+                      	   &lt;namespace-uri&gt;uri:namespace2&lt;/namespace-uri&gt;
+                      	&lt;/remove-namespaces:&gt;
+						</pre>
+					</li>
+				</ul>
+			</action>
+		</release>
+		<release date="2009-08-25" description="Development release" version="2.0.1">
+			<action dev="pgussow" type="add">Added XSDs for the implementation and configuration XML.</action>
+			<action dev="pgussow" type="change">Refactored some classes to use interfaces instead of implementation classes</action>
+			<action dev="pgussow" type="add">Externalized all exception messages</action>
+		</release>
+	</body>
+</document>

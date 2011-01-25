@@ -1,0 +1,5 @@
+    <GetUsers xmlns="http://httpconnector.coe.cordys.com/2.0/REST/JIRA">
+      <max_rows>50</max_rows>
+      <email_filter></email_filter>
+      <group></group>
+    </GetUsers>
