@@ -1,0 +1,12 @@
+<filesystem xmlns="">
+    <file source="${build.jar}/${project.jar.name}.jar" destdir="${project.deploy}" ecxdir="cordys_install_dir" unless="skip.java"/>
+    <file source="${lib.dir}/coelib.jar" destdir="${project.deploy}" ecxdir="cordys_install_dir" unless="skip.java"/>
+    <file source="${lib.dir}/cobra.jar" destdir="${project.deploy}" ecxdir="cordys_install_dir" unless="skip.java"/>
+    <file source="${lib.dir}/js.jar" destdir="${project.deploy}" ecxdir="cordys_install_dir" unless="skip.java"/>
+    <file source="${lib.dir}/commons-codec-1.3.jar" destdir="ext" ecxdir="cordys_install_dir" unless="skip.java"/>
+    <file source="${lib.dir}/commons-httpclient-3.1.jar" destdir="ext" ecxdir="cordys_install_dir" unless="skip.java"/>
+    <file source="${lib.dir}/commons-logging-1.1.1.jar" destdir="ext" ecxdir="cordys_install_dir" unless="skip.java"/>
+  	<file source="${build.web}" destdir="\Web${project.deploy}" ecxdir="cordys_install_dir"/>
+  	<file source="${build.docs}" destdir="${project.deploy}" ecxdir="cordys_install_dir"/>
+</filesystem>
+
