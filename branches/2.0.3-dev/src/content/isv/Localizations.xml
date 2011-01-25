@@ -1,5 +1,0 @@
-<localizations>
-    <localization destdir="/localization" ecxdir="cordys_install_dir" source="${src.content.localizations}/com.cordys.coe.ac.httpconnector.Messages.xml"/>
-    <localization destdir="/localization" ecxdir="cordys_install_dir" source="${src.content.localizations}/com.cordys.coe.ac.httpconnector.exception.ConnectorExceptionMessages.xml"/>
-    <localization destdir="/localization" ecxdir="cordys_install_dir" source="${src.content.localizations}/com.cordys.coe.ac.httpconnector.exception.HandlerExceptionMessages.xml"/>
-</localizations>
