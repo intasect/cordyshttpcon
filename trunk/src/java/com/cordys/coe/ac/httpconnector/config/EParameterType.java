@@ -18,7 +18,7 @@
  package com.cordys.coe.ac.httpconnector.config;
 
 /**
- * Holds teh different parameter types available.
+ * Holds the different parameter types available.
  *
  * @author  pgussow
  */

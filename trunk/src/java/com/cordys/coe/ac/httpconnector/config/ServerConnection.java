@@ -17,18 +17,8 @@
  */
  package com.cordys.coe.ac.httpconnector.config;
 
-import com.cordys.coe.ac.httpconnector.exception.ConnectorException;
-import com.cordys.coe.ac.httpconnector.exception.ConnectorExceptionMessages;
-import com.cordys.coe.util.xml.nom.XPathHelper;
-
-import com.eibus.util.system.Native;
-
-import com.eibus.xml.nom.Node;
-import com.eibus.xml.xpath.XPathMetaInfo;
-
 import java.net.MalformedURLException;
 import java.net.URL;
-
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -38,9 +28,17 @@ import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.MultiThreadedHttpConnectionManager;
 import org.apache.commons.httpclient.UsernamePasswordCredentials;
 import org.apache.commons.httpclient.auth.AuthScope;
-import org.apache.commons.httpclient.contrib.ssl.EasySSLProtocolSocketFactory;
 import org.apache.commons.httpclient.protocol.Protocol;
 import org.apache.commons.httpclient.protocol.ProtocolSocketFactory;
+
+import com.cordys.coe.ac.httpconnector.exception.ConnectorException;
+import com.cordys.coe.ac.httpconnector.exception.ConnectorExceptionMessages;
+import com.cordys.coe.ac.httpconnector.ssl.DummySSLSocketFactory;
+import com.cordys.coe.util.xml.nom.XPathHelper;
+import com.eibus.util.logger.CordysLogger;
+import com.eibus.util.system.Native;
+import com.eibus.xml.nom.Node;
+import com.eibus.xml.xpath.XPathMetaInfo;
 
 /**
  * Contains configuration information for the web server connection.
@@ -107,6 +105,11 @@ class ServerConnection
      * Connection user name.
      */
     private String m_username;
+
+    /**
+     * Holds the logger to use.
+     */
+    private static final CordysLogger LOG = CordysLogger.getCordysLogger(ServerConnection.class);
 
     /**
      * Creates a new ServerConnection object.
@@ -299,7 +302,7 @@ class ServerConnection
      * @see  com.cordys.coe.ac.httpconnector.config.IServerConnection#open()
      */
     public void open()
-    {
+    {    	
         m_connManager = new MultiThreadedHttpConnectionManager();
         m_client = new HttpClient(m_connManager);
 
@@ -318,14 +321,16 @@ class ServerConnection
 
         if ("https".equals(protoName) && !m_checkServerCertificate)
         {
+            LOG.info("Using DummySSLProtocolSocketFactory");
             Protocol proto = new Protocol("https",
                                           (ProtocolSocketFactory)
-                                          new EasySSLProtocolSocketFactory(), 443);
+                                          new DummySSLSocketFactory(), port);
 
             hostConfig.setHost(hostName, port, proto);
         }
         else
         {
+          	LOG.info("Using Default SSLProtocolSocketFactory");
             hostConfig.setHost(hostName, port, Protocol.getProtocol(protoName));
         }
 
@@ -350,7 +355,7 @@ class ServerConnection
             {
                 m_client.getParams().setAuthenticationPreemptive(true);
             }
-
+             
             Credentials defaultcreds = new UsernamePasswordCredentials(m_username, m_password);
 
             m_client.getState().setCredentials(new AuthScope(hostName, port, AuthScope.ANY_REALM),
