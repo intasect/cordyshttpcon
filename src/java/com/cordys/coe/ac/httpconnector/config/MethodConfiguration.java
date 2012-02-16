@@ -270,7 +270,7 @@ class MethodConfiguration
         // Read the response code.
         try
         {
-            tmpStr = XPathHelper.getStringValue(implNode, "ns:" + TAG_VALID_RESPONSE_CODE, "-1");
+            tmpStr = XPathHelper.getStringValue(implNode, "ns:" + TAG_VALID_RESPONSE_CODE, xmi, "-1");
             m_validResponseCode = Integer.parseInt(tmpStr);
         }
         catch (NumberFormatException e)

@@ -83,6 +83,9 @@ public class MethodExecutor
 
         // Convert the SOAP request XML into an HTTP request.
         httpMethod = requestHandler.process(reqNode, serverConnection, client);
+        
+        // Set follow redirects
+      	httpMethod.setFollowRedirects(true);
 
         // Set additional HTTP parameters.
         HttpMethodParams hmpMethodParams = httpMethod.getParams();

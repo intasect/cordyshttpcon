@@ -432,6 +432,8 @@ public class HttpConnector extends ApplicationConnector
     private void loadConfiguration()
                             throws ConnectorException
     {
+    	 	LOG.info("Loading Configuration.");
+
         // Get configuration file name
         String sConfigFileName = m_configuration.getConfigurationFilePath();
 
