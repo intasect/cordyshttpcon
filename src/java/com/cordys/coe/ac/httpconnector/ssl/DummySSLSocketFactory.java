@@ -1,3 +1,20 @@
+/**
+ * Copyright 2006 Cordys R&D B.V. 
+ * 
+ * This file is part of the Cordys HTTP Connector. 
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package com.cordys.coe.ac.httpconnector.ssl;
 
 import java.io.IOException;
@@ -16,16 +33,23 @@ import org.apache.commons.httpclient.protocol.SecureProtocolSocketFactory;
 import com.eibus.util.logger.CordysLogger;
 import com.eibus.util.logger.Severity;
 
+/**
+ * A ssl socket factory that will ignore any certificate even when it is 
+ * expired or self-signed.
+ *
+ * @author  jpluimers
+ */
 public class DummySSLSocketFactory implements SecureProtocolSocketFactory
 {
-	static CordysLogger LOG = CordysLogger.getCordysLogger(DummySSLSocketFactory.class);
-
+	private static final CordysLogger LOG = CordysLogger.getCordysLogger(DummySSLSocketFactory.class);
 	private SSLContext sslcontext = null;
 
 	@Override
 	public Socket createSocket(Socket socket, String host, int port, boolean autoClose) throws IOException,
 																																										 UnknownHostException {
-		LOG.log(Severity.DEBUG, "create socket called with boolean parameter");
+		if (LOG.isDebugEnabled()) {
+			LOG.debug("create socket called with boolean parameter");
+		}
 		return getSSLContext().getSocketFactory().createSocket(socket, host, port, autoClose);
 	}
 
@@ -49,8 +73,9 @@ public class DummySSLSocketFactory implements SecureProtocolSocketFactory
 
 	public Socket createSocket(String host, int port, InetAddress clientHost, int clientPort) throws IOException,
 																																													 UnknownHostException {
-		LOG.log(Severity.DEBUG, "create socket called with client port");
-
+		if (LOG.isDebugEnabled()) {
+			LOG.debug("create socket called with client port");
+		}
 		return getSSLContext().getSocketFactory().createSocket(host, port, clientHost, clientPort);
 	}
 
@@ -62,7 +87,9 @@ public class DummySSLSocketFactory implements SecureProtocolSocketFactory
 														 final HttpConnectionParams params) throws IOException,
 																															 UnknownHostException,
 																															 ConnectTimeoutException {
-		LOG.log(Severity.DEBUG, "create socket called with five parameters");
+		if (LOG.isDebugEnabled()) {
+			LOG.log(Severity.DEBUG, "create socket called with five parameters");
+		}
 		if (params == null) {
 			throw new IllegalArgumentException("Parameters may not be null");
 		}
@@ -82,7 +109,9 @@ public class DummySSLSocketFactory implements SecureProtocolSocketFactory
 	}
 
 	public Socket createSocket(String host, int port) throws IOException, UnknownHostException {
-		LOG.log(Severity.DEBUG, "create socket called with two parameters");
+		if (LOG.isDebugEnabled()) {
+			LOG.log(Severity.DEBUG, "create socket called with two parameters");
+		}
 		return getSSLContext().getSocketFactory().createSocket(host, port);
 	}
 

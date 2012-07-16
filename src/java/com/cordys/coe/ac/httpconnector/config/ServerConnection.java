@@ -301,7 +301,8 @@ class ServerConnection
     /**
      * @see  com.cordys.coe.ac.httpconnector.config.IServerConnection#open()
      */
-    public void open()
+    @SuppressWarnings("deprecation")
+		public void open()
     {    	
         m_connManager = new MultiThreadedHttpConnectionManager();
         m_client = new HttpClient(m_connManager);
@@ -321,7 +322,10 @@ class ServerConnection
 
         if ("https".equals(protoName) && !m_checkServerCertificate)
         {
-            LOG.info("Using DummySSLProtocolSocketFactory");
+        		if (LOG.isInfoEnabled())
+        		{
+        		    LOG.info("Using DummySSLProtocolSocketFactory");
+        		}
             Protocol proto = new Protocol("https",
                                           (ProtocolSocketFactory)
                                           new DummySSLSocketFactory(), port);
@@ -330,7 +334,10 @@ class ServerConnection
         }
         else
         {
-          	LOG.info("Using Default SSLProtocolSocketFactory");
+        		if (LOG.isInfoEnabled())
+      			{
+        				LOG.info("Using Default SSLProtocolSocketFactory");
+      			}
             hostConfig.setHost(hostName, port, Protocol.getProtocol(protoName));
         }
 

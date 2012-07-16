@@ -1,4 +1,3 @@
-
 /**
  * Copyright 2006 Cordys R&D B.V. 
  * 
@@ -429,10 +428,14 @@ public class HttpConnector extends ApplicationConnector
      *
      * @throws  ConnectorException
      */
-    private void loadConfiguration()
+    @SuppressWarnings("deprecation")
+		private void loadConfiguration()
                             throws ConnectorException
-    {
-    	 	LOG.info("Loading Configuration.");
+    {	
+    		if (LOG.isInfoEnabled())
+        {
+    			LOG.info("Loading Configuration.");
+        }
 
         // Get configuration file name
         String sConfigFileName = m_configuration.getConfigurationFilePath();
