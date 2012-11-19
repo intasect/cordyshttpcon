@@ -1,0 +1,82 @@
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="GetUsers" targetNamespace="http://httpconnector.coe.cordys.com/2.0/REST/JIRA" xmlns:tns="http://httpconnector.coe.cordys.com/2.0/REST/JIRA">
+  <wsdl:types>
+    <schema xmlns="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://httpconnector.coe.cordys.com/2.0/REST/JIRA">
+      <element name="GetUsers">
+        <complexType>
+          <sequence>
+            <element type="xs:long" name="max_rows" xmlns:xs="http://www.w3.org/2001/XMLSchema" />
+            <element type="xs:string" name="email_filter" xmlns:xs="http://www.w3.org/2001/XMLSchema" />
+            <element type="xs:string" name="group" xmlns:xs="http://www.w3.org/2001/XMLSchema" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="GetUsersResponse" type="tns:ctGetUsersResponse">
+
+      </element>
+
+      <complexType name="ctGetUsersResponse">
+      	<sequence>
+      		<element name="tuple" type="tns:ctOld" maxOccurs="unbounded" minOccurs="0"></element>
+      	</sequence>
+      </complexType>
+    
+      <complexType name="ctOld">
+      	<sequence>
+      		<element name="old" type="tns:ctUser" maxOccurs="1" minOccurs="1"></element>
+      	</sequence>
+      </complexType>
+    
+      <complexType name="ctUser">
+      	<sequence>
+      		<element name="user" type="tns:ctUserDetail" maxOccurs="1"
+      			minOccurs="1">
+      		</element>
+      	</sequence>
+      </complexType>
+    
+      <complexType name="ctUserDetail">
+      	<sequence>
+      		<element name="username" type="string" maxOccurs="1" minOccurs="1"></element>
+      		<element name="email" type="string" maxOccurs="1" minOccurs="1"></element>
+      		<element name="fullname" type="string" maxOccurs="1" minOccurs="0"></element>
+      		<element name="groups" type="tns:ctGroups" maxOccurs="1" minOccurs="0"></element>
+      	</sequence>
+      </complexType>
+    
+      <complexType name="ctGroups">
+      	<sequence>
+      		<element name="group" type="string" maxOccurs="unbounded" minOccurs="1"></element>
+      	</sequence>
+      </complexType>
+    </schema>
+  </wsdl:types>
+  <wsdl:message name="GetUsers">
+    <wsdl:part element="tns:GetUsers" name="body" />
+  </wsdl:message>
+  <wsdl:message name="GetUsersResponse">
+    <wsdl:part element="tns:GetUsersResponse" name="body" />
+  </wsdl:message>
+  <wsdl:portType name="GetUsersPortType">
+    <wsdl:operation name="GetUsersOperation">
+      <wsdl:input message="tns:GetUsers" />
+      <wsdl:output message="tns:GetUsersResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="GetUsersBinding" type="tns:GetUsersPortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetUsersOperation">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="GetUsersService">
+    <wsdl:port binding="tns:GetUsersBinding" name="GetUsersPort">
+      <soap:address location="http://cnl1259/cordys/com.eibus.web.soap.Gateway.wcp?organization=o=Telindus,cn=cordys,o=gussow.com" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

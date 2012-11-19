@@ -1,0 +1,114 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--
+ Copyright 2006 Cordys R&D B.V. 
+  
+ This file is part of the Cordys HTTP Connector. 
+ 
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+ 
+ http://www.apache.org/licenses/LICENSE-2.0
+ 
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+<html onapplicationready="Form_initialize()">
+    <head>
+        <title>HTTP Connector Configuration</title>
+        <script type="text/javascript" src="/cordys/wcp/application.js"></script>
+        
+        <link rel="stylesheet" type="text/css" href="/cordys/wcp/style/default.css" />
+        <style type="text/css">
+            input{font-size:11; font-family:verdana;}
+            label{font-size:11; font-family:verdana;}
+        </style>
+       
+    <script type="text/javascript" src="/cordys/wcp/admin/behavior/applicationconnector.js"></script>
+    <script type="text/javascript">
+        /**
+         * Holds the namespace for the configuration XML.
+         */
+        var HTTPCON_CONFIG_NS = "http://httpconnector.coe.cordys.com/2.0/configuration";
+		
+        /**
+         * The Form initialize method is called on onapplicationready event.
+         */
+		var isFormLoad = true;
+        function Form_initialize()
+        {
+            initialize();
+            isFormLoad = false;
+        }
+
+        /**
+         * Raise a change notification to the System Resource Manager to handle the change indicator '*'.
+         */
+        function raiseConfigurationChanges()
+        {
+            if (!isFormLoad && !application.container.isWizardContainer) {
+                system.windows.servicepropertiesPage_SystemResourceManager.configurationChanged();
+            }
+        }
+
+        /**
+         * This method creates the needed configuration for the connector.
+         *
+         * @param xmlConfig The configuration-XML.
+         *
+         * @return true if the checks were successfull and the configuration is finished.
+         *         false if the user still has to fill the mandatory fields.
+         */
+        function createConnectorConfiguration(xmlConfig)
+        {
+            var bReturn = true;
+            var xmlDoc = xmlConfig.ownerDocument;
+            
+            var nConfig = cordys.createElementNS(xmlDoc, HTTPCON_CONFIG_NS, "Configuration");
+            cordys.appendXMLNode(nConfig, xmlConfig);
+
+            var nConfigPath = cordys.createElementNS(xmlDoc, HTTPCON_CONFIG_NS, "config-path");
+            cordys.setTextContent(nConfigPath, document.getElementById("txtConfigPath").value);
+            cordys.appendXMLNode(nConfigPath, nConfig);
+                        
+            return bReturn;
+        }//createConnectorConfiguration
+        
+        /**
+         * This method fills the inputfields based on the XML.
+         *
+         * @param xmlConfig The configuration-XML.
+         */
+        function fillInPropertyScreen(xmlConfig)
+        {
+            var nConfigPath = cordys.selectXMLNode(xmlConfig,
+                                                    "//ccon:Configuration/ccon:config-path",
+                                                    {"ccon":HTTPCON_CONFIG_NS});
+            if (nConfigPath) 
+            {
+                document.getElementById("txtConfigPath").value = cordys.getTextContent(nConfigPath);
+            }
+        }
+    </script>
+    </head>
+    <body>
+        <table width="100%" style="border: 1px solid black;" cellspacing="0" cellpadding="5">
+            <tr class="medium">
+                <td colspan="2" align="center">
+                    <label><b>HTTP Connector Details</b></label>
+                </td>
+            </tr>
+            <tr>
+                <td width="50%" align="right">
+                    <label>Configuration File Path:</label>
+                </td>
+                <td  align="left">
+                    <input type="text" style="width:300px" id="txtConfigPath" class="input" onChange="raiseConfigurationChanges()" value="/Cordys/HttpConnector/config.xml"/>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>

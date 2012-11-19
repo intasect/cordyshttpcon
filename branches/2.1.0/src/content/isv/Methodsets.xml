@@ -1,0 +1,4 @@
+<methodsets>
+    <methodset file="${src.content.methodsets}/Method Set HTTP Connector Samples.xml"/>
+    <methodset file="${src.content.methodsets}/Method Set JIRA REST.xml"/>
+</methodsets>

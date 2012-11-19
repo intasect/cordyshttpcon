@@ -1,0 +1,6 @@
+<CreateUser xmlns="http://httpconnector.coe.cordys.com/2.0/REST/JIRA">
+      <username>c</username>
+      <password>b</password>
+      <fullname>User b</fullname>
+      <email>pgussow@cordys.com</email>
+    </CreateUser>
