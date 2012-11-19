@@ -1,5 +1,0 @@
-<applicationconnectors>
-    <applicationconnector file="${src.content.appcon}/com.cordys.coe.ac.httpconnector.HttpConnector"
-                          key="/Cordys/WCP/Application Connector/com.cordys.coe.ac.httpconnector.HttpConnector"
-                          name="com.cordys.coe.ac.httpconnector.HttpConnector"/>
-</applicationconnectors>

@@ -1,7 +1,0 @@
-<dependencies>
-    <dependency>
-        <isvpackage>
-            <cn>${xfruntime.isvp.name}</cn>
-        </isvpackage>
-    </dependency>
-</dependencies>
