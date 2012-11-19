@@ -1,0 +1,68 @@
+
+<ApplicationConnectorDesigntime
+	xmlns:cws="http://schemas.cordys.com/cws/1.0"
+	type="com.cordys.applicationconnector.ApplicationConnectorDesigntime"
+	typeVersion="0014C25C-F38B-71DF-A966-2D0AC4143A56"
+	RuntimeDocumentID="D0DF9A40-AB83-11E1-FA2C-F528BEF1BB8B">
+	<DocumentID>D0DF9A40-AB83-11E1-FA2C-F528BEF19B8B</DocumentID>
+	<Name>HttpConnector</Name>
+	<Description>HttpConnector</Description>
+	<CreatedBy>sdwivedi</CreatedBy>
+	<CreationDate>2012-07-19T06:07:30.318</CreationDate>
+	<Notes/>
+	<ClassPath>coe/httpconnector/httpconnector.jar;coe/httpconnector/coelib.jar;coe/httpconnector/cobra.jar;components/secadmin/ccm.jar;ext/commons-httpclient-3.1.jar;ext/commons-httpclient-contrib-3.1.jar;ext/commons-logging-1.1.1.jar;</ClassPath>
+	<ImplementationClass>com.cordys.coe.ac.httpconnector.HttpConnector</ImplementationClass>
+	<LoggerCategoryGroups>
+		<loggercategory
+			xmlns:c="http://schemas.cordys.com/cws/1.0"
+			xmlns:SOAP="http://schemas.xmlsoap.org/soap/envelope/"
+			xmlns="">
+			<categorygroup
+				displayname="HttpConnector">
+				<category
+					inserted="true">com.cordys.coe.ac.httpconnector</category>
+			</categorygroup>
+			<categorygroup
+				displayname="CoE Library">
+				<category
+					inserted="true">com.cordys.coe.util</category>
+				<category
+					inserted="true">com.cordys.coe.exception</category>
+			</categorygroup>
+			<categorygroup
+				displayname="Apache HTTP Client">
+				<category
+					inserted="true">org.apache.commons.httpclient</category>
+			</categorygroup>
+			<categorygroup
+				displayname="Apache HTTP Client Wire">
+				<category
+					inserted="true">httpclient</category>
+			</categorygroup>
+		</loggercategory>
+	</LoggerCategoryGroups>
+	<StartupDependencies>
+		<startupDependency
+			xmlns:c="http://schemas.cordys.com/cws/1.0"
+			xmlns:SOAP="http://schemas.xmlsoap.org/soap/envelope/"
+			xmlns="">
+			<namespace>http://schemas.cordys.com/1.0/xmlstore</namespace>
+		</startupDependency>
+	</StartupDependencies>
+	<SupportsJVMSharing>true</SupportsJVMSharing>
+	<ConfigurationPage>
+		<uri
+			id="D0DF9A40-AB83-11E1-FA2C-B109D5E0DB8B"
+		/>
+	</ConfigurationPage>
+	<Image>
+		<uri
+			id="BB09C156-8370-11E1-FE6B-89FE1FC1F78F"
+			path="HTTPConnector/src/Images/wcp/theme/default/image/wizard/configurationconnector.png"
+			type="com.cordys.cws.documenttypes.image.Png"
+		/>
+	</Image>
+	<MetadataPage/>
+	<PropertyPage/>
+	<TypeImplementationMappings/>
+</ApplicationConnectorDesigntime>

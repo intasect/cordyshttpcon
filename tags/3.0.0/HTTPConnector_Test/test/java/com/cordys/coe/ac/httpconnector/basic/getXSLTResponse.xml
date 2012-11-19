@@ -1,0 +1,30 @@
+<SOAP:Envelope xmlns:SOAP="http://schemas.xmlsoap.org/soap/envelope/">
+    <SOAP:Header xmlns:SOAP="http://schemas.xmlsoap.org/soap/envelope/">
+        <header xmlns="http://schemas.cordys.com/General/1.0/" xmlns:SOAP="http://schemas.xmlsoap.org/soap/envelope/">
+            <msg-id>001E101F-9F7C-11E1-F90E-1FA0712512FF</msg-id>
+            <license>License has expired since 1361 day(s)</license>
+        </header>
+    </SOAP:Header>
+    <SOAP:Body>
+        <GetXMLObjectResponse xmlns="http://schemas.cordys.com/1.0/xmlstore" xmlns:SOAP="http://schemas.xmlsoap.org/soap/envelope/">
+            <tuple key="/Cordys/HttpConnector/config.xml" lastModified="1339586189459" level="organization" name="config.xml" original="/Cordys/HttpConnector/config.xml" xmlns="http://schemas.cordys.com/1.0/xmlstore" xmlns:SOAP="http://schemas.xmlsoap.org/soap/envelope/">
+                <old>
+                    <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+                        <xsl:template match="/">
+                            <Books>
+                                <xsl:for-each select="ISBNdb/BookList/BookData">
+                                    <title>
+                                        <xsl:value-of select="Title"/>
+                                    </title>
+                                    <author>
+                                        <xsl:value-of select="AuthorsText"/>
+                                    </author>
+                                </xsl:for-each>
+                            </Books>
+                        </xsl:template>
+                    </xsl:stylesheet>
+                </old>
+            </tuple>
+        </GetXMLObjectResponse>
+    </SOAP:Body>
+</SOAP:Envelope>

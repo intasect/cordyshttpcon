@@ -1,0 +1,32 @@
+<project default="copyFiles" name="HTTPConnector">
+    <property environment="env"/>
+    <property name="src" value="src"/>
+    <property name="build" value="outputFiles"/>
+    <path id="project.classpath">
+        <pathelement location="${env.CORDYS_HOME}/cordyscp.jar"/>
+        <pathelement location="${env.CORDYS_HOME}/components/anttasks/anttasks.jar"/>
+        <pathelement location="${env.CORDYS_HOME}/ext/log4j-1.2.15.jar"/>
+    </path>
+	<!-- Task to copy the projects -->
+    <target name="copyFiles">
+        <copy overwrite="true" todir="${env.SOURCE_HOME}/components/cws/modelers/HTTPConnector">
+            <fileset dir="HTTPConnector">
+            </fileset>
+        </copy>
+        <copy overwrite="true" todir="${env.SOURCE_HOME}/components/cws/modelers/HTTPConnector_Test">
+            <fileset dir="HTTPConnector_Test">
+            </fileset>
+        </copy>
+        <copy file="buildSingleModelerProjects.xml" overwrite="true" todir="${env.SOURCE_HOME}/components/cwsmodelers"/>
+    </target>
+	<!-- Task to deply a CAP -->
+    <taskdef classpathref="project.classpath" resource="com/cordys/deployment/ant/taskdef.xml">
+    </taskdef>
+	<!-- This target is not required as of now as our project does not have any class definitions -->
+    <target depends="buildProject" name="installPackages">
+        <deployapplicationpackage ldapRoot="${env.CORDYS_LDAP_ROOT}" name="Cordys CWS Modeler Definition" server="localhost"/>
+        <deployapplicationpackage ldapRoot="${env.CORDYS_LDAP_ROOT}" name="Cordys CWS WS Modeler Definition" server="localhost"/>
+    </target>
+    <target name="buildProject">
+    </target>
+</project>
