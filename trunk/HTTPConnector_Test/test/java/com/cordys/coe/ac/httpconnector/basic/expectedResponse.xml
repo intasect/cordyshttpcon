@@ -1,0 +1,64 @@
+<ISBNdb>
+	<BookList page_number="1" page_size="10" shown_results="10" total_results="1002">
+		<BookData book_id="101_extraordinary_investments_curious_unusual_and_bizarre_wa" isbn="1906659257" isbn13="9781906659257">
+            <Title>101 Extraordinary Investments: Curious, Unusual and Bizarre Ways to Make Money</Title>
+            <TitleLong>101 Extraordinary Investments: Curious, Unusual and Bizarre Ways to Make Money: A handbook for the adventurous collector</TitleLong>
+            <AuthorsText>Toby Walne, </AuthorsText>
+            <PublisherText publisher_id="harriman_house">Harriman House</PublisherText>
+        </BookData>
+        <BookData book_id="132_of_the_most_unusual_cars_that_ever_ran_at_indianapolis" isbn="0668021942" isbn13="9780668021944">
+            <Title>132 of the most unusual cars that ever ran at Indianapolis,</Title>
+            <TitleLong/>
+            <AuthorsText>Lyle Kenyon Engel, </AuthorsText>
+            <PublisherText publisher_id="arco_pub_co">Arco Pub. Co</PublisherText>
+        </BookData>
+        <BookData book_id="200_conspicuous_unusual_or_economically_important_tropical_p" isbn="0961261021" isbn13="9780961261023">
+            <Title>200 conspicuous, unusual, or economically important tropical plants of the Caribbean</Title>
+            <TitleLong/>
+            <AuthorsText>by John M. Kingsbury</AuthorsText>
+            <PublisherText publisher_id="bullbrier_press">Ithaca, NY : Bullbrier Press, 1988.</PublisherText>
+        </BookData>
+        <BookData book_id="277_secrets_your_cat_wants_you_to_know" isbn="0898159520" isbn13="9780898159523">
+            <Title>277 Secrets Your Cat Wants You to Know</Title>
+            <TitleLong>277 Secrets Your Cat Wants You to Know: A Cat-Alog of Unusual and Useful Information</TitleLong>
+            <AuthorsText>Paulette Cooper, Paul Noble, Jack Fleming</AuthorsText>
+            <PublisherText publisher_id="ten_speed_press">Ten Speed Press</PublisherText>
+        </BookData>
+        <BookData book_id="277_secrets_your_dog_wants_you_to_know" isbn="0898156823" isbn13="9780898156829">
+            <Title>277 secrets your dog wants you to know</Title>
+            <TitleLong>277 secrets your dog wants you to know: a doggie bag of unusual and useful information</TitleLong>
+            <AuthorsText>Paulette Cooper and Paul Noble</AuthorsText>
+            <PublisherText publisher_id="ten_speed_press">Berkeley, Calif. : Ten Speed Press, c1995.</PublisherText>
+        </BookData>
+        <BookData book_id="277_secrets_your_dog_wants_you_to_know_a01" isbn="1580080146" isbn13="9781580080149">
+            <Title>277 Secrets Your Dog Wants You to Know</Title>
+            <TitleLong>277 Secrets Your Dog Wants You to Know: A Doggie Bag of Unusual and Useful Information</TitleLong>
+            <AuthorsText>Paulette Cooper, Paul Noble, </AuthorsText>
+            <PublisherText publisher_id="ten_speed_press">Ten Speed Press</PublisherText>
+        </BookData>
+        <BookData book_id="277_secrets_your_dog_wants_you_to_know_a02" isbn="0898157374" isbn13="9780898157376">
+            <Title>277 secrets your dog wants you to know</Title>
+            <TitleLong>277 secrets your dog wants you to know: a doggie bag of unusual and useful information</TitleLong>
+            <AuthorsText>Paulette Cooper and Paul Noble</AuthorsText>
+            <PublisherText publisher_id="ten_speed_press">Berkeley, Calif. : Ten Speed Press, c1995.</PublisherText>
+        </BookData>
+        <BookData book_id="277_secrets_your_snake_wants_you_to_know" isbn="1580080359" isbn13="9781580080354">
+            <Title>277 Secrets Your Snake Wants You to Know</Title>
+            <TitleLong>277 Secrets Your Snake Wants You to Know: Unusual and Useful Information for Snake Owners and Snake Lovers</TitleLong>
+            <AuthorsText>Paulette Cooper</AuthorsText>
+            <PublisherText publisher_id="ten_speed_press">Ten Speed Press</PublisherText>
+        </BookData>
+        <BookData book_id="2_000_questions_and_answers_about_the_civil_war" isbn="0517189267" isbn13="9780517189269">
+            <Title>2, 000 questions and answers about the Civil War</Title>
+            <TitleLong>2, 000 questions and answers about the Civil War: unusual and unique facts about the War between the States</TitleLong>
+            <AuthorsText>Webb Garrison</AuthorsText>
+            <PublisherText publisher_id="gramercy_books">New York : Gramercy Books, 1998.</PublisherText>
+        </BookData>
+        <BookData book_id="50_even_more_unusual_things_to_see_in_ontario" isbn="1550460579" isbn13="9781550460575">
+            <Title>50 Even More Unusual Things to See in Ontario</Title>
+            <TitleLong/>
+            <AuthorsText>Ron Brown, </AuthorsText>
+            <PublisherText publisher_id="boston_mills_press">Boston Mills Press</PublisherText>
+        </BookData>
+    </BookList>
+</ISBNdb>

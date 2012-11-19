@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MessageBundle id="com.cordys.coe.ac.httpconnector.Messages" javaclass="com.cordys.coe.ac.httpconnector.Messages">
+    <Message id="connectorManagementDescription">
+        <MessageText>HttpConnector connector</MessageText>
+        <Description/>
+        <Annotations>
+            <DocumenationURL/>
+        </Annotations>
+    </Message>
+    <Message id="coelibVersionMismatch">
+        <MessageText>Coelib version mismatch.</MessageText>
+        <Description/>
+        <Annotations>
+            <DocumenationURL/>
+        </Annotations>
+    </Message>
+    <Message id="connectorStarting">
+        <MessageText>Starting HttpConnector connector</MessageText>
+        <Description/>
+        <Annotations>
+            <DocumenationURL/>
+        </Annotations>
+    </Message>
+    <Message id="connectorStarted">
+        <MessageText>HttpConnector connector started.</MessageText>
+        <Description/>
+        <Annotations>
+            <DocumenationURL/>
+        </Annotations>
+    </Message>
+    <Message id="connectorStartException">
+        <MessageText>An error occurred while starting the HttpConnector connector.</MessageText>
+        <Description/>
+        <Annotations>
+            <DocumenationURL/>
+        </Annotations>
+    </Message>
+    <Message id="connectorStopped">
+        <MessageText>HttpConnector connector stopped.</MessageText>
+        <Description/>
+        <Annotations>
+            <DocumenationURL/>
+        </Annotations>
+    </Message>
+    <Message id="connectorReset">
+        <MessageText>Resetting HttpConnector connector</MessageText>
+        <Description/>
+        <Annotations>
+            <DocumenationURL/>
+        </Annotations>
+    </Message>
+    <Message id="transactionAbort">
+        <MessageText>Aborted the transaction.</MessageText>
+        <Description/>
+        <Annotations>
+            <DocumenationURL/>
+        </Annotations>
+    </Message>
+    <Message id="transactionCommit">
+        <MessageText>Committed the transaction.</MessageText>
+        <Description/>
+        <Annotations>
+            <DocumenationURL/>
+        </Annotations>
+    </Message>
+    <Message id="transactionError">
+        <MessageText>An error occurred while processing the SOAP request: {0}</MessageText>
+        <Description/>
+        <Annotations>
+            <DocumenationURL/>
+        </Annotations>
+    </Message>
+    <Message id="requestProcessing">
+        <MessageText>Request Processing</MessageText>
+        <Description/>
+        <Annotations>
+            <DocumenationURL/>
+        </Annotations>
+    </Message>
+    <Message id="requestTransformationTime">
+        <MessageText>Request transformation time</MessageText>
+        <Description/>
+        <Annotations>
+            <DocumenationURL/>
+        </Annotations>
+    </Message>
+    <Message id="responseTransformationTime">
+        <MessageText>Response transformation time</MessageText>
+        <Description/>
+        <Annotations>
+            <DocumenationURL/>
+        </Annotations>
+    </Message>
+    <Message id="httpSendAndReceive">
+        <MessageText>HTTP request processing time</MessageText>
+        <Description/>
+        <Annotations>
+            <DocumenationURL/>
+        </Annotations>
+    </Message>
+    <Message id="loadingConfiguration">
+        <MessageText>Loading Configuration from {0}</MessageText>
+        <Description/>
+        <Annotations>
+            <DocumenationURL/>
+        </Annotations>
+    </Message>
+    <Message id="usingDummySocketFactory">
+        <MessageText>Using DummySSLProtocolSocketFactory</MessageText>
+        <Description/>
+        <Annotations>
+            <DocumenationURL/>
+        </Annotations>
+    </Message>
+    <Message id="usingCordysSocketFactory">
+        <MessageText>Using CordysSSLProtocolSocketFactory</MessageText>
+        <Description/>
+        <Annotations>
+            <DocumenationURL/>
+        </Annotations>
+    </Message>
+    <Message id="booleanCreateSocket">
+        <MessageText>Create socket called with boolean parameter</MessageText>
+        <Description/>
+        <Annotations>
+            <DocumenationURL/>
+        </Annotations>
+    </Message>
+    <Message id="clientCreateSocket">
+        <MessageText>Create socket called with client port</MessageText>
+        <Description/>
+        <Annotations>
+            <DocumenationURL/>
+        </Annotations>
+    </Message>
+    <Message id="fiveParameterCreateSocket">
+        <MessageText>Create socket called with five parameters</MessageText>
+        <Description/>
+        <Annotations>
+            <DocumenationURL/>
+        </Annotations>
+    </Message>
+    <Message id="twoParameterCreateSocket">
+        <MessageText>Create socket called with two parameters</MessageText>
+        <Description/>
+        <Annotations>
+            <DocumenationURL/>
+        </Annotations>
+    </Message>
+    <Message id="checkClientTrustedCalled">
+        <MessageText>checkClientTrusted of DummyX509TrustManager called </MessageText>
+        <Description/>
+        <Annotations>
+            <DocumenationURL/>
+        </Annotations>
+    </Message>
+    <Message id="checkServerTrustedCalled">
+        <MessageText>checkServerTrusted of DummyX509TrustManager called </MessageText>
+        <Description/>
+        <Annotations>
+            <DocumenationURL/>
+        </Annotations>
+    </Message>
+    <Message id="getAcceptedIssuersCalled">
+        <MessageText>getAcceptedIssuers of DummyX509TrustManager called</MessageText>
+        <Description/>
+        <Annotations>
+            <DocumenationURL/>
+        </Annotations>
+    </Message>
+    <Message id="connectionFound">
+        <MessageText>Connection {0} found in organization {1}</MessageText>
+        <Description/>
+        <Annotations>
+            <DocumenationURL/>
+        </Annotations>
+    </Message>
+    <Message id="organizationAwarenessMode">
+        <MessageText>Organization awareness is set to {0}</MessageText>
+        <Description/>
+        <Annotations>
+            <DocumenationURL/>
+        </Annotations>
+    </Message>
+    <Message id="xsltFoundIn">
+        <MessageText>XSLT {0} found in {1}</MessageText>
+        <Description/>
+        <Annotations>
+            <DocumenationURL/>
+        </Annotations>
+    </Message>
+</MessageBundle>

@@ -1,0 +1,23 @@
+
+<TranslatedText
+	xmlns:cws="http://schemas.cordys.com/cws/1.0"
+	type="com.cordys.translation.TranslatedText"
+	RuntimeDocumentID="D0DF9A40-AB83-11E1-FA2F-2743C1BE5B8B">
+	<DocumentID>D0DF9A40-AB83-11E1-FA2F-2743C1BE3B8B</DocumentID>
+	<Name>D0DF9A40-AB83-11E1-FA2F-2743C1BE3B8B</Name>
+	<Description>Configuration File Path cannot be empty</Description>
+	<CreatedBy>sdwivedi</CreatedBy>
+	<CreationDate>2012-07-19T08:15:46.097</CreationDate>
+	<Notes/>
+	<Text>Configuration File Path cannot be empty</Text>
+	<Language>
+		<uri
+			id="D0DF9A40-AB83-11E1-FA19-E7E6BD921F45"
+		/>
+	</Language>
+	<TextIdentifier>
+		<uri
+			id="D0DF9A40-AB83-11E1-FA2F-2743C1BDFB8B"
+		/>
+	</TextIdentifier>
+</TranslatedText>

@@ -1,0 +1,23 @@
+
+<TranslatedText
+	xmlns:cws="http://schemas.cordys.com/cws/1.0"
+	type="com.cordys.translation.TranslatedText"
+	RuntimeDocumentID="D0DF9A40-AB83-11E1-FA2C-F528BEED7B8B">
+	<DocumentID>D0DF9A40-AB83-11E1-FA2C-F528BEED5B8B</DocumentID>
+	<Name>D0DF9A40-AB83-11E1-FA2C-F528BEED5B8B</Name>
+	<Description>HTTP Connector Details</Description>
+	<CreatedBy>sdwivedi</CreatedBy>
+	<CreationDate>2012-07-19T06:14:08.483</CreationDate>
+	<Notes/>
+	<Text>HTTP Connector Details</Text>
+	<Language>
+		<uri
+			id="D0DF9A40-AB83-11E1-FA19-E7E6BD921F45"
+		/>
+	</Language>
+	<TextIdentifier>
+		<uri
+			id="D0DF9A40-AB83-11E1-FA2C-F528BEED1B8B"
+		/>
+	</TextIdentifier>
+</TranslatedText>

@@ -1,0 +1,6 @@
+<SOAP:Envelope xmlns:SOAP="http://schemas.xmlsoap.org/soap/envelope/">
+  <SOAP:Body>
+    <GetXMLObject xmlns="http://schemas.cordys.com/1.0/xmlstore">
+    </GetXMLObject>
+  </SOAP:Body>
+</SOAP:Envelope>

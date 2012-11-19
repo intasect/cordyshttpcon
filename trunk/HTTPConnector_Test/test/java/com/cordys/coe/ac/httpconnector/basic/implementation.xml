@@ -1,0 +1,12 @@
+<implementation type="HTTP" xmlns="http://httpconnector.coe.cordys.com/2.0/implementation" xmlns:SOAP="http://schemas.xmlsoap.org/soap/envelope/" xmlns:c="http://schemas.cordys.com/cws/1.0">
+    <connection-id>Books</connection-id>
+    <uri/>
+    <http-method>GET</http-method>
+    <request-handler class="com.cordys.coe.ac.httpconnector.impl.StandardRequestHandler">
+    </request-handler>
+    <response-handler class="com.cordys.coe.ac.httpconnector.impl.StandardResponseHandler">
+        <xslt xmlstore="bookXSL"/>
+    </response-handler>
+    <valid-response-code>200</valid-response-code>
+    <namespaces/>
+</implementation>

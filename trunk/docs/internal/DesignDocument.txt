@@ -1,0 +1,100 @@
+
+Introduction
+------------
+
+HTTP Connector providers connectivity to web servers by POSTing
+XML data from the SOAP request method body. Response XML data returned
+by the web server is returned in the SOAP response method body.
+Request XML data is encoded as specified in the design document.
+
+As the HTTP requests are sent over SSL, connections are pooled for
+performance reasons (SSL handshake is usually expensive).
+
+Method implementation can include XSL transformations for the request XML
+and response XML.
+
+HTTP connectivity is provided by Apache HTTP client library.
+
+Configuration
+-------------
+
+Connector configuration page contains an XMLStore path for a configuration
+file which specifies the HTTP connection information with a connection
+ID. This ID is used in the method implementation XML, so for that method,
+the configured connection is used. This way methods do not need to be
+changed when moving the software to another environment (e.g. from development
+to test). Configuration XML looks like this:
+<configuration>
+	<connections>
+		<connection id="CONN-1">  
+			<url>https://myserver.acme.com</url>
+			<username>myuser</username>
+			<password>--base64 encoded--</password>		
+			<authenticate-always>true</authenticate-always>	
+			<timeout>30000</timeout>
+		</connection>  
+		<connection id="CONN-2">  
+			<url>https://myserver.acme.com</url>
+			<username>myuser2</username>
+			<password>--base64 encoded--</password>
+			<check-certificate>false</check-certificate>
+		</connection>  
+	</connections>
+</configuration>
+
+- If the check-certificate element is set to false (defaults to true), then
+the server certificate is not validated. This is useful for development
+and test environments if self-signed certificates are used.
+- If the authenticate-always element is set to true (defaults to false), then
+authentication information is always sent, even if the server does not ask
+it. This allows skipping authentication phase and speeds up the connection.
+- The optional timeout element contains the HTTP request timeout value in
+milliseconds. The default value is 30000 (30 seconds).
+
+Connector SOAP method implementation XML looks like this:
+<implementation type="HTTP">
+	<connection-id>CONN-1</connection-id>
+	<uri>myservice/path</uri>
+	<valid-response-xpath>/Result = 'OK'</valid-response-xpath>
+	<request-xslt xmlstore="..." file="..."> ... </request-xslt>
+	<response-xslt> ... </response-xslt>
+	<namespaces>
+		<binding prefix="ns" uri="my-ns-uri"/>
+	</namespaces>
+</implementation>
+
+- connection-id specifies the connection ID in the configuration file.
+- Optional uri specifies the URI path of the service. This is appended after the server URL. 
+- The valid-response-xpath element specifies a boolean XPath expression which 
+is used to determine if the server returned an error (a SOAP fault will be
+generated in that case). If not set, no SOAP fault will be generated based on the
+response. 
+- Optional request-xslt and response-xslt elements contain the XSLT used for
+converting the request XML and response XML. If attribute 'xmlstore' is specified, the file
+is loaded from XMLStore with the given path, if attribute 'file' is specified, the file is 
+loaded from given file system path, otherwise the XSLT XML is read from the element contents. 
+- The optional namespaces section defines namespace prefix to URI mappings for all XPath expressions.
+
+Operation
+---------
+When connector starts, it read the connection configuration file from XMLStore
+and parses the connection entries into Java objects (these are mapped
+by the ID, so that they can be easily looked up). No connections are opened
+at start-up.
+
+When an incoming SOAP request comes in, a method configuration object is 
+created (or possibly a cached version is fetched) and the connection configuration
+object is fetched from the connector. The XML from the SOAP method body
+is optionally transformed and finally encoded into ASCII and sent to the 
+web server over HTTP connection. The response is read and parsed into XML.
+If the valid response XPath is configured for this method, then the response XML
+is validated agains this XPath expression. If the response XSLT is specified,
+the XML is transformed before adding it to the SOAP response method.
+
+ 
+
+
+
+
+
+ 
