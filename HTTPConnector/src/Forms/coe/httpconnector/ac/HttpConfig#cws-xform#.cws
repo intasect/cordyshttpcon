@@ -1,0 +1,296 @@
+
+<XFormDesigntime
+	xmlns:cws="http://schemas.cordys.com/cws/1.0"
+	type="com.cordys.xforms.XFormDesigntime"
+	typeVersion="7DF91CE8-0E68-4b94-BA5F-AF95F8FC2839"
+	RuntimeDocumentID="D0DF9A40-AB83-11E1-FA2C-B109D5E0FB8B">
+	<DocumentID>D0DF9A40-AB83-11E1-FA2C-B109D5E0DB8B</DocumentID>
+	<Name>HttpConfig</Name>
+	<Description>HttpConfig</Description>
+	<CreatedBy>sdwivedi</CreatedBy>
+	<CreationDate>2012-07-19T05:54:32.871</CreationDate>
+	<Notes/>
+	<XFormContent>
+		<xformhtml
+			xmlns="http://schemas.cordys.com/1.0/xform"
+			xmlns:cws="http://schemas.cordys.com/cws/1.0"
+			xmlns:xforms="http://www.w3.org/2002/xforms/cr"
+			xmlns:ev="http://www.w3.org/2001/xml-events"
+			xmlns:wcpforms="http://schemas.cordys.com/wcp/xforms"
+			xformsversion="2"
+			key="coe/httpconnector/ac/HttpConfig"
+			focusatstartup="true"
+			showNotify="true"
+			showError="true">
+			<xhead>
+				<script
+					src="/cordys/wcp/admin/behavior/applicationconnector.js"
+				/>
+			</xhead>
+			<xbody>
+				<xforms:group
+					wcpforms:layout="vertical"
+					id="xbody_group"
+					wcpforms:labelalign="ontop">
+					<xforms:group
+						appearance="box"
+						wcpforms:designLibrary="cas.xforms.designerlibrary.controls.XFormsGroupbox"
+						id="mainGroupBox"
+						isNavigationEnabled="true"
+						wcpforms:layout="vertical"
+						wcpforms:class="v_layout"
+						wcpforms:size="null 106px"
+						wcpforms:labelalign="ontop">
+						<xforms:label
+							textIdentifier="D0DF9A40-AB83-11E1-FA2C-F528BEED1B8B"
+							wcpforms:class="groupheader">HTTP Connector Details</xforms:label>
+						<xforms:input
+							wcpforms:designLibrary="cas.xforms.designerlibrary.controls.XFormsInput"
+							id="txtConfigPath"
+							wcpforms:class="v_layout"
+							wcpforms:size="null auto"
+							doEBIValidate="false">
+							<xforms:label
+								textIdentifier="D0DF9A40-AB83-11E1-FA2C-F528BEE9DB8B"
+								wcpforms:class="v_label">Configuration File Path
+</xforms:label>
+							<xforms:action
+								ev:event="xforms-value-changed">
+								<xforms:txtConfigPath_Change/>
+							</xforms:action>
+						</xforms:input>
+					</xforms:group>
+				</xforms:group>
+			</xbody>
+			<xformsscript>
+				<![CDATA[/**
+* This method creates the needed configuration for the connector
+* @param xmlConfig The configuration-XML.
+* @return true if the checks were successful and the configuration is finished.
+*         false if the user still has to fill the mandatory fields.
+*/
+
+var namespace = "http://httpconnector.coe.cordys.com/2.0/configuration";
+var formLoaded = false;
+var regex = new RegExp(/^\s*$/);
+
+function createConnectorConfiguration(xmlConfig)
+{
+    var xmlDoc = cordys.getXMLDocument();
+    var configNode = cordys.selectXMLNode(xmlConfig, "./http:Configuration", {http:namespace});
+    if(!configNode)
+    {
+        configNode = cordys.createElementNS(xmlDoc, namespace, "Configuration");
+        cordys.appendXMLNode(configNode, xmlConfig);
+    }
+	
+    var pathNode = cordys.selectXMLNode(configNode, "./http:config-path", {http:namespace});
+    if(!pathNode)
+    {
+        pathNode = cordys.createElementNS(xmlDoc, namespace, "config-path");
+        cordys.appendXMLNode(pathNode, configNode);
+    }
+    if(regex.test(txtConfigPath.value))
+    {
+        application.showError(localization_get("FilePathEmpty"));
+        return false;
+    }
+    cordys.setTextContent(pathNode, txtConfigPath.getValue());
+    return true;
+}
+        
+/**
+* This method fills the input fields based on the XML.
+*
+* @param xmlConfig The configuration-XML.
+*/
+function fillInPropertyScreen(xmlConfig)
+{
+    var pathNode = cordys.selectXMLNode(xmlConfig, "./http:Configuration/http:config-path", {http:namespace});
+    if (pathNode) 
+    {
+        txtConfigPath.setValue(cordys.getTextContent(pathNode));
+    }
+}
+
+function Form_InitDone(eventObject)
+{
+    initialize();
+    formLoaded = true;
+}
+
+function raiseConfigurationChanges()
+{
+    if(formLoaded && !application.container.isWizardContainer)
+    {
+	system.windows.servicepropertiesPage_SystemResourceManager.configurationChanged();
+    }
+}
+
+function txtConfigPath_Change(eventObject)
+{
+    raiseConfigurationChanges();
+}
+]]>
+			</xformsscript>
+			<xforms:action
+				ev:event="xforms-initialize-done">
+				<xforms:Form_InitDone/>
+			</xforms:action>
+		</xformhtml>
+	</XFormContent>
+	<XFormWSDL/>
+	<automatic>false</automatic>
+	<caption></caption>
+	<data/>
+	<height></height>
+	<isInternal>false</isInternal>
+	<isLegacy>false</isLegacy>
+	<left></left>
+	<mode>full</mode>
+	<parameters/>
+	<qualifiedclassname></qualifiedclassname>
+	<showOnStartPage>false</showOnStartPage>
+	<taskDescription>HttpConfig</taskDescription>
+	<taskName>HttpConfig</taskName>
+	<title>true</title>
+	<top></top>
+	<type>XForm</type>
+	<width></width>
+	<CompositeControls/>
+	<Htms/>
+	<Images/>
+	<InstanceSchemaFragments/>
+	<Javascripts/>
+	<ReferredXForms/>
+	<Representations/>
+	<StyleSheets/>
+	<TranslatableApplications/>
+	<TranslatableName>
+		<TranslatableText
+			type="com.cordys.translation.TranslatableText"
+			RuntimeDocumentID="D0DF9A40-AB83-11E1-FA2C-B109D5DFBB8B">
+			<DocumentID>D0DF9A40-AB83-11E1-FA2C-B109D5DF9B8B</DocumentID>
+			<Name>D0DF9A40-AB83-11E1-FA2C-B109D5DF9B8B</Name>
+			<Description>D0DF9A40-AB83-11E1-FA2C-B109D5DF9B8B</Description>
+			<CreatedBy>sdwivedi</CreatedBy>
+			<CreationDate>2012-07-19T05:54:32.873</CreationDate>
+			<Notes/>
+			<Identifier>
+				<uri
+					id="D0DF9A40-AB83-11E1-FA2C-B109D5DFDB8B"
+				/>
+			</Identifier>
+		</TranslatableText>
+	</TranslatableName>
+	<TranslatableUITexts>
+		<TranslatableUIText
+			type="com.cordys.xforms.TranslatableUIText"
+			RuntimeDocumentID="D0DF9A40-AB83-11E1-FA2C-F528BEEDBB8B">
+			<DocumentID>D0DF9A40-AB83-11E1-FA2C-F528BEED9B8B</DocumentID>
+			<Name>D0DF9A40-AB83-11E1-FA2C-F528BEED9B8B</Name>
+			<Description>D0DF9A40-AB83-11E1-FA2C-F528BEED9B8B</Description>
+			<CreatedBy>sdwivedi</CreatedBy>
+			<CreationDate>2012-07-19T06:14:08.484</CreationDate>
+			<Notes/>
+			<UIRef>mainGroupBox</UIRef>
+			<TooltipText/>
+			<TranslatableName>
+				<TranslatableText
+					type="com.cordys.translation.TranslatableText"
+					RuntimeDocumentID="D0DF9A40-AB83-11E1-FA2C-F528BEECFB8B">
+					<DocumentID>D0DF9A40-AB83-11E1-FA2C-F528BEECDB8B</DocumentID>
+					<Name>D0DF9A40-AB83-11E1-FA2C-F528BEECDB8B</Name>
+					<Description>D0DF9A40-AB83-11E1-FA2C-F528BEECDB8B</Description>
+					<CreatedBy>sdwivedi</CreatedBy>
+					<CreationDate>2012-07-19T06:14:08.484</CreationDate>
+					<Notes/>
+					<Identifier>
+						<uri
+							id="D0DF9A40-AB83-11E1-FA2C-F528BEED1B8B"
+						/>
+					</Identifier>
+				</TranslatableText>
+			</TranslatableName>
+			<XForm>
+				<uri
+					id="D0DF9A40-AB83-11E1-FA2C-B109D5E0DB8B"
+				/>
+			</XForm>
+		</TranslatableUIText>
+		<TranslatableUIText
+			type="com.cordys.xforms.TranslatableUIText"
+			RuntimeDocumentID="D0DF9A40-AB83-11E1-FA2C-F528BEEA7B8B">
+			<DocumentID>D0DF9A40-AB83-11E1-FA2C-F528BEEA5B8B</DocumentID>
+			<Name>D0DF9A40-AB83-11E1-FA2C-F528BEEA5B8B</Name>
+			<Description>D0DF9A40-AB83-11E1-FA2C-F528BEEA5B8B</Description>
+			<CreatedBy>sdwivedi</CreatedBy>
+			<CreationDate>2012-07-19T06:14:44.076</CreationDate>
+			<Notes/>
+			<UIRef>txtConfigPath</UIRef>
+			<TooltipText/>
+			<TranslatableName>
+				<TranslatableText
+					type="com.cordys.translation.TranslatableText"
+					RuntimeDocumentID="D0DF9A40-AB83-11E1-FA2C-F528BEE9BB8B">
+					<DocumentID>D0DF9A40-AB83-11E1-FA2C-F528BEE99B8B</DocumentID>
+					<Name>D0DF9A40-AB83-11E1-FA2C-F528BEE99B8B</Name>
+					<Description>D0DF9A40-AB83-11E1-FA2C-F528BEE99B8B</Description>
+					<CreatedBy>sdwivedi</CreatedBy>
+					<CreationDate>2012-07-19T06:14:44.078</CreationDate>
+					<Notes/>
+					<Identifier>
+						<uri
+							id="D0DF9A40-AB83-11E1-FA2C-F528BEE9DB8B"
+						/>
+					</Identifier>
+				</TranslatableText>
+			</TranslatableName>
+			<XForm>
+				<uri
+					id="D0DF9A40-AB83-11E1-FA2C-B109D5E0DB8B"
+				/>
+			</XForm>
+		</TranslatableUIText>
+	</TranslatableUITexts>
+	<Webservices/>
+	<aclFragments/>
+	<deliveryModels/>
+	<image/>
+	<input/>
+	<messageParts>
+		<MessagePart
+			type="com.cordys.task.MessagePart"
+			RuntimeDocumentID="D0DF9A40-AB83-11E1-FA2C-F528BEE97B8B">
+			<DocumentID>D0DF9A40-AB83-11E1-FA2C-F528BEE95B8B</DocumentID>
+			<Name>freeformcontrols</Name>
+			<Description>freeformcontrols</Description>
+			<CreatedBy>sdwivedi</CreatedBy>
+			<CreationDate>2012-07-19T06:14:44.077</CreationDate>
+			<Notes/>
+			<isRefExists>false</isRefExists>
+			<namespace>http://schemas.cordys.com/1.0/xforms/processapi</namespace>
+			<operationName>freeformcontrols</operationName>
+		</MessagePart>
+	</messageParts>
+	<messages>
+		<TranslatableText
+			type="com.cordys.translation.TranslatableText"
+			RuntimeDocumentID="D0DF9A40-AB83-11E1-FA2F-2743C1BEFB8B">
+			<DocumentID>D0DF9A40-AB83-11E1-FA2F-2743C1BEDB8B</DocumentID>
+			<Name>D0DF9A40-AB83-11E1-FA2F-2743C1BEDB8B</Name>
+			<Description>D0DF9A40-AB83-11E1-FA2F-2743C1BEDB8B</Description>
+			<CreatedBy>sdwivedi</CreatedBy>
+			<CreationDate>2012-07-19T08:15:46.096</CreationDate>
+			<Notes/>
+			<Identifier>
+				<uri
+					id="D0DF9A40-AB83-11E1-FA2F-2743C1BDFB8B"
+				/>
+			</Identifier>
+		</TranslatableText>
+	</messages>
+	<output/>
+	<tagsContainer/>
+	<taskParts/>
+</XFormDesigntime>

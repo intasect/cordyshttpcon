@@ -1,0 +1,20 @@
+
+<WebSource
+	xmlns:cws="http://schemas.cordys.com/cws/1.0"
+	type="com.cordys.cws.documenttypes.websource.WebSource"
+	RuntimeDocumentID="8EE45378-1841-11E1-FE39-C9C971FC7BF7">
+	<DocumentID>8EE45378-1841-11E1-FE39-C9C971FC5BF7</DocumentID>
+	<Name>WebLibrary</Name>
+	<Description>WebLibrary</Description>
+	<CreatedBy>sdwivedi</CreatedBy>
+	<CreationDate>2012-08-29T11:41:36.873</CreationDate>
+	<Notes/>
+	<NamespacePrefix></NamespacePrefix>
+	<SourceFolder>
+		<uri
+			id="BB09C156-8370-11E1-FE6B-89FE1FC0578F"
+			path="HTTPConnector/src/Images"
+			type="com.cordys.cws.runtime.types.folder.StudioFolder"
+		/>
+	</SourceFolder>
+</WebSource>

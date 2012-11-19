@@ -1,0 +1,131 @@
+
+<Project
+	xmlns:cws="http://schemas.cordys.com/cws/1.0"
+	type="com.cordys.cws.documenttypes.project.Project"
+	typeVersion="0019B980-5ADC-71DF-9C5A-1C9DE0779704"
+	RuntimeDocumentID="D0DF9A40-AB83-11E1-FA19-E7E6BD917F45">
+	<DocumentID>D0DF9A40-AB83-11E1-FA19-E7E6BD915F45</DocumentID>
+	<Name>HTTPConnector</Name>
+	<Description>HTTPConnector</Description>
+	<CreatedBy>sdwivedi</CreatedBy>
+	<CreationDate>2012-07-18T11:53:56.078</CreationDate>
+	<Notes/>
+	<NamespacePrefix></NamespacePrefix>
+	<ISVPackageInfo>
+		<ISVPackageInfo
+			type="com.cordys.cws.packaging.isvp.ISVPackageInfo"
+			typeVersion="00215A62-2E6A-11E1-FCAC-F71EBE253749"
+			RuntimeDocumentID="D0DF9A40-AB83-11E1-FA19-E7E6BD92FF45">
+			<DocumentID>D0DF9A40-AB83-11E1-FA19-E7E6BD92DF45</DocumentID>
+			<Name>Cordys COE HTTPConnector</Name>
+			<Description>Cordys COE HTTPConnector</Description>
+			<CreatedBy>sdwivedi</CreatedBy>
+			<CreationDate>2012-07-18T11:53:56.077</CreationDate>
+			<Notes/>
+			<BuildNumber>0</BuildNumber>
+			<ISVPackageFileName>Cordys COE HTTPConnector 3.0.0</ISVPackageFileName>
+			<ISVPackageOwner>Cordys COE</ISVPackageOwner>
+			<PackageForRuntime>true</PackageForRuntime>
+			<PostISVLoaderInformation/>
+			<Product>HTTPConnector</Product>
+			<SupportedDeploymentSpaces
+				xmlns:cws="http://schemas.cordys.com/cws/1.0"
+				cws:type="collection">
+				<cws:item>SYSTEM</cws:item>
+			</SupportedDeploymentSpaces>
+			<Version>3.0</Version>
+			<LicenseAgreement>
+				<ISVPLegalText
+					type="com.cordys.cws.packaging.isvp.ISVPLegalText"
+					RuntimeDocumentID="A0A1F894-6A7D-11E1-FF17-2FEE342EF209">
+					<DocumentID>A0A1F894-6A7D-11E1-FF17-2FEE342ED209</DocumentID>
+					<Name>Untitled ISVP Legal Text</Name>
+					<Description>Untitled ISVP Legal Text</Description>
+					<CreatedBy>sdwivedi</CreatedBy>
+					<CreationDate>2012-09-07T07:01:58.519</CreationDate>
+					<Notes/>
+					<AgreementText>
+						<TextLegalText
+							type="com.cordys.cws.packaging.isvp.TextLegalText"
+							RuntimeDocumentID="A0A1F894-6A7D-11E1-FF17-2FEE342E9209">
+							<DocumentID>A0A1F894-6A7D-11E1-FF17-2FEE342E7209</DocumentID>
+							<Name>Untitled Legal Text in Txt</Name>
+							<Description>Untitled Legal Text in Txt</Description>
+							<CreatedBy>sdwivedi</CreatedBy>
+							<CreationDate>2012-09-07T07:01:58.519</CreationDate>
+							<Notes/>
+							<LegalTextInText>
+								<uri
+									id="A0A1F894-6A7D-11E1-FF17-3A1F41DF5209"
+									path="HTTPConnector/Cordys Install Dir/Apache License 2.0.txt"
+									type="com.cordys.external.document.Text"
+								/>
+							</LegalTextInText>
+						</TextLegalText>
+					</AgreementText>
+				</ISVPLegalText>
+			</LicenseAgreement>
+			<ThirdPartyAgreement/>
+		</ISVPackageInfo>
+	</ISVPackageInfo>
+	<RuntimeQualifiedName/>
+	<SourceFolder>
+		<uri
+			id="BB09C156-8370-11E1-FE6B-89FE1F66578F"
+			path="HTTPConnector"
+			type="com.cordys.cws.runtime.types.folder.StudioFolder"
+		/>
+	</SourceFolder>
+	<_AddOns>
+		<TranslationInformation
+			type="com.cordys.translation.TranslationInformation"
+			typeVersion="b81bb9b4-8af7-470f-a5fa-864be49acb9d"
+			RuntimeDocumentID="D0DF9A40-AB83-11E1-FA19-E7E6BD91BF45">
+			<DocumentID>D0DF9A40-AB83-11E1-FA19-E7E6BD919F45</DocumentID>
+			<Name>TranslationInformation</Name>
+			<Description/>
+			<CreatedBy>sdwivedi</CreatedBy>
+			<CreationDate>2012-07-18T11:53:56.078</CreationDate>
+			<Notes/>
+			<LanguagePacks>
+				<LanguagePack
+					type="com.cordys.translation.LanguagePack"
+					typeVersion="11456b87-q895-32f2-584q-58f3tlm2so65"
+					RuntimeDocumentID="D0DF9A40-AB83-11E1-FA19-E7E6BD923F45">
+					<DocumentID>D0DF9A40-AB83-11E1-FA19-E7E6BD921F45</DocumentID>
+					<Name>en-US</Name>
+					<Description/>
+					<CreatedBy>sdwivedi</CreatedBy>
+					<CreationDate>2012-07-18T11:53:56.076</CreationDate>
+					<Notes/>
+					<Language>English - United States</Language>
+					<Texts>
+						<uri
+							id="D0DF9A40-AB83-11E1-FA19-E7E6BD925F45"
+							path="HTTPConnector/en-US_D0DF9A40-AB83-11E1-FA19-E7E6BD925F45"
+							type="com.cordys.cws.associations.MergeableAssociation"
+						/>
+					</Texts>
+					<TranslationInformation>
+						<uri
+							id="D0DF9A40-AB83-11E1-FA19-E7E6BD919F45"
+						/>
+					</TranslationInformation>
+				</LanguagePack>
+			</LanguagePacks>
+			<ProjectLanguage>
+				<uri
+					id="D0DF9A40-AB83-11E1-FA19-E7E6BD921F45"
+				/>
+			</ProjectLanguage>
+			<Texts>
+				<uri
+					id="D0DF9A40-AB83-11E1-FA19-E7E6BD91DF45"
+					path="HTTPConnector/TranslationInformation_D0DF9A40-AB83-11E1-FA19-E7E6BD91DF45"
+					type="com.cordys.cws.associations.MergeableAssociation"
+				/>
+			</Texts>
+			<TranslationInformation/>
+		</TranslationInformation>
+	</_AddOns>
+</Project>

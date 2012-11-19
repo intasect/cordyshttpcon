@@ -1,0 +1,4 @@
+<projects>
+    <project build="true" copyPackage="true" deploy="true" package="true" srcFolder="modelers/HTTPConnector"/>
+    <project build="true" copyPackage="true" deploy="true" package="true" srcFolder="modelers/HTTPConnector_Test"/>
+</projects>

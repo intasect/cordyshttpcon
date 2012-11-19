@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:implementation xmlns:tns="http://httpconnector.coe.cordys.com/2.0/implementation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://httpconnector.coe.cordys.com/2.0/implementation implementation.xsd ">
+  <tns:connection-id>tns:connection-id</tns:connection-id>
+  <tns:uri>http://tempuri.org</tns:uri>
+  <tns:clean-response-body>true</tns:clean-response-body>
+  <tns:http-method>POST</tns:http-method>
+  <tns:request-handler class=""/>
+  <tns:response-handler>tns:response-handler</tns:response-handler>
+  <tns:valid-response-xpath>tns:valid-response-xpath</tns:valid-response-xpath>
+  <tns:valid-response-code>0</tns:valid-response-code>
+  <tns:namespaces>
+    <tns:binding prefix="" uri=""/>
+  </tns:namespaces>
+</tns:implementation>
