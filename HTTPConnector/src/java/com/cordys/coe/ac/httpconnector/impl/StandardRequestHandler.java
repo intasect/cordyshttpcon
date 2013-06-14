@@ -71,6 +71,14 @@ public class StandardRequestHandler implements IRequestHandler {
 	 */
 	private static final String TAG_NAMESPACE_URI = "namespace-uri";
 	/**
+	 * Holds the name of the custom request header.
+	 */
+	private static final String TAG_REQ_HEADERS = "req-headers";
+	/**
+	 * Holds the name of the tag 'header'.
+	 */
+	private static final String TAG_REQ_HEADER = "header";
+	/**
 	 * Logger for log messages from this class.
 	 */
 	private static final CordysLogger LOG = CordysLogger
@@ -103,6 +111,11 @@ public class StandardRequestHandler implements IRequestHandler {
 	private XSLT xslt;
 
 	boolean isInXMLStore = false;
+	
+	/**
+	 * Contains request headers that are read from the method implementation.
+	 */
+	private RequestHeader[] requestHeadersArray = null;
 
 	/**
 	 * @see IRequestHandler#initialize(int, IXSLTStore, IMethodConfiguration,
@@ -163,8 +176,22 @@ public class StandardRequestHandler implements IRequestHandler {
 				}
 			}
 		}
+		initalizeRequestHeaders(configXml, xmi);
 	}
 
+	private void initalizeRequestHeaders(int configXml, XPathMetaInfo xmi) {
+		int[] params = XPathHelper.selectNodes(configXml, "ns:"
+				+ TAG_REQ_HEADERS + "/ns:" + TAG_REQ_HEADER, xmi);
+		requestHeadersArray = new RequestHeader[params.length];
+		for (int i = 0; i < params.length; i++) {
+			int paramNode = params[i];
+			RequestHeader p = new RequestHeader();
+			p.name = Node.getAttribute(paramNode, "name", "");
+			p.value = Node.getDataWithDefault(paramNode, "");
+			requestHeadersArray[i] = p;
+		}
+		
+	}
 	/**
 	 * @see IRequestHandler#process(int, IServerConnection, HttpClient)
 	 */
@@ -180,7 +207,9 @@ public class StandardRequestHandler implements IRequestHandler {
 
 		switch (m_method.getHttpMethodType()) {
 		case GET:
-			return new GetMethod(uri); // Get method does not have a body.
+			HttpMethod httpMethodGet = new GetMethod(uri); // Get method does not have a body. 
+			setRequestHeaders(httpMethodGet);
+			return httpMethodGet; 
 
 		case POST:
 			httpMethod = new PostMethod(uri);
@@ -191,7 +220,9 @@ public class StandardRequestHandler implements IRequestHandler {
 			break;
 
 		case DELETE:
-			return new DeleteMethod(uri); // Delete method does not have a body.
+			HttpMethod httpMethodDelete = new DeleteMethod(uri); // Delete method does not have a body.
+			setRequestHeaders(httpMethodDelete);
+			return httpMethodDelete; 
 
 		default:
 			throw new HandlerException(
@@ -230,12 +261,13 @@ public class StandardRequestHandler implements IRequestHandler {
 
 			httpMethod.setRequestEntity(new ByteArrayRequestEntity(reqData,
 					contentType));
-
+			
 			if (LOG.isDebugEnabled()) {
 				LOG.debug("Sending data: " + new String(reqData));
 			}
 
 			httpMethod.setRequestHeader("Content-type", contentType);
+			setRequestHeaders(httpMethod);
 		} finally {
 			if ((reqNode != 0) && (reqNode != requestNode)) {
 				Node.delete(reqNode);
@@ -246,6 +278,11 @@ public class StandardRequestHandler implements IRequestHandler {
 		return httpMethod;
 	}
 
+	private void setRequestHeaders(HttpMethod httpMethod) {
+		for (RequestHeader requestHeader : requestHeadersArray) {
+			httpMethod.setRequestHeader(requestHeader.name, String.valueOf(requestHeader.value));			
+		}
+	}
 	/**
 	 * Converts the XML structure into a byte array.
 	 * 
@@ -440,5 +477,16 @@ public class StandardRequestHandler implements IRequestHandler {
 	protected int preProcessXml(int reqNode, boolean mustDelete)
 			throws HandlerException {
 		return reqNode;
+	}
+
+	private static class RequestHeader {
+		/**
+		 * Holds the type for the parameter.
+		 */
+		private String name;
+		/**
+		 * Holds the value if the parameter is fixed.
+		 */
+		private Object value;
 	}
 }
