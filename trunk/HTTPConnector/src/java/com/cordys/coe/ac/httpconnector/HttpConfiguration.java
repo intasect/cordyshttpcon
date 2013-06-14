@@ -93,9 +93,12 @@ public class HttpConfiguration {
 				+ TAG_CONFIGURATION, xmi);
 
 		if ((child == 0) || !Node.getName(child).equals(TAG_CONFIGURATION)) {
+			child = XPathHelper.selectSingleNode(iConfigNode, "ns:"
+					+ TAG_CONFIGURATION_LC, xmi);
+			if ((child == 0) || !Node.getName(child).equals(TAG_CONFIGURATION_LC)) {
 			throw new ConnectorException(
 					ConnectorExceptionMessages.CONFIGURATION_ELEMENT_NOT_FOUND);
-		}
+		}	}
 
 		// Get the path to the configuration file.
 		m_configPath = XPathHelper.getStringValue(child, "//ns:"
