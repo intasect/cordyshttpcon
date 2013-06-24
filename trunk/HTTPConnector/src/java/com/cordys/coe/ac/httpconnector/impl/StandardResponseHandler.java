@@ -239,7 +239,7 @@ public class StandardResponseHandler implements IResponseHandler {
 			}
 		}
 
-		if (responseBody.length == 0) {
+		 if (responseBody == null || responseBody.length == 0){
 			return 0;
 		}
 
